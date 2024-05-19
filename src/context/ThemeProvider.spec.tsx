@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ThemeContext, ThemeContextType, ThemeProvider } from "./ThemeProvider";
+import { ThemeContext, ThemeContextType } from "./ThemeProvider";
 import { render } from "../util/rtl-custom";
 
 const TestComp = () => {
@@ -8,11 +8,7 @@ const TestComp = () => {
 }
 
 it("renders component with default theme 'light'", () => {
-    const { getByText } = render(
-        <ThemeProvider>
-            <TestComp />
-        </ThemeProvider>
-    );
+    const { getByText } = render(<TestComp />);
 
     expect(getByText("light")).toBeInTheDocument();
 });
